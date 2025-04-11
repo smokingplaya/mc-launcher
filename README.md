@@ -6,6 +6,12 @@
 * Fast
 * [authlib-injector](http://github.com/yushijinhun/authlib-injector/) support
 
+# Installation
+
+```shell
+cargo add mc-launcher
+```
+
 # Usage
 ## Minecraft's game_dir structure
 ```
