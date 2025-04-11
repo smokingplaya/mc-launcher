@@ -1,0 +1,7 @@
+configuration:
+  default: run_tests
+
+tasks:
+  run_tests:
+    commands:
+      - cargo test -- --nocapture

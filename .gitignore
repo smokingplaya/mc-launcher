@@ -1,0 +1,6 @@
+/target
+.vscode
+.idea
+config
+logs
+authlib-injector.log
