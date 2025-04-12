@@ -1,6 +1,14 @@
-use std::{io, process::{Child, Command, Stdio}};
+// use std::{io, process::{Command, Stdio}};
+use std::{io::Result, process::Stdio};
 use crate::{client::classpath::ClassPathCollector, java::Java};
 use super::{arguments::generate_data_map, configuration::MinecraftConfiguration as Configuration};
+
+#[cfg(feature = "tokio")]
+use tokio::process::{Child, Command};
+
+#[cfg(not(feature = "tokio"))]
+use std::process::{Child, Command};
+
 
 #[derive(Debug, Clone)]
 pub struct MinecraftLauncher<'a>(Configuration<'a>);
@@ -16,7 +24,7 @@ impl<'a> MinecraftLauncher<'a> {
     Self(config)
   }
 
-  pub fn start(self) -> io::Result<Child> {
+  pub fn start(self) -> Result<Child> {
     let mut client = self.0.client.get_client_info()?;
 
     let java = self.0.java.clone()
