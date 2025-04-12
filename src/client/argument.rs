@@ -75,7 +75,7 @@ impl CollectArguments for Vec<Argument> {
 
 fn jvm_setup(config: &Configuration, jvm: &mut Vec<Argument>) {
   if let Some(authlib) = &config.session.authlib_server {
-    let version = authlib.version;
+    let version = &authlib.version;
     jvm.insert(0, Argument { value: ArgumentValue::String(format!("-javaagent:${{libraries_dir}}/moe/yushi/authlibinjector/{}/authlibinjector-{}.jar=${{authlib_server}}", version, version)), rules: None });
   }
 }

@@ -20,9 +20,9 @@ fn start_game() -> anyhow::Result<()> {
     java: Some(java),
     window: WindowConfiguration::default(),
     session: MinecraftSession {
-      username: "smxkin",
+      username: String::from("smxkin"),
       authlib_server: Some(AuthLibConfiguration {
-        server: "https://riverfall.ru/api/session",
+        server: String::from("https://riverfall.ru/api/session"),
         ..Default::default()
       }),
       ..Default::default()
@@ -30,7 +30,7 @@ fn start_game() -> anyhow::Result<()> {
 
     client: MinecraftClient {
       path: Path::new("C:\\Users\\smxkin\\AppData\\Roaming\\ru.riverfall.launcher\\clients\\technorpg").to_path_buf(),
-      version: "Forge 1.12.2",
+      version: String::from("Forge 1.12.2"),
       ..Default::default()
     }
   };

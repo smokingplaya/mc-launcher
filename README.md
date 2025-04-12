@@ -29,13 +29,13 @@ cargo add mc-launcher
 ```rust
 let config = MinecraftConfiguration {
   session: MinecraftSession {
-    username: "smxkin", // username of player
+    username: String::from("smxkin"), // username of player
     ..Default::default()
   },
 
   client: MinecraftClient {
     path: Path::new("C:\\Users\\smxkin\\AppData\\Roaming\\ru.riverfall.launcher\\clients\\technorpg").to_path_buf(),
-    version: "Forge 1.12.2",
+    version: String::from("Forge 1.12.2"),
     ..Default::default()
   },
 
@@ -58,8 +58,8 @@ MinecraftConfiguration {
   session: MinecraftSession {
     username: "smxkin", // username of player
     authlib_server: Some(AuthLibConfiguration {
-        server: "https://auth.mojang.com",
-        version: "1.2.5"
+        server: String::from("https://auth.mojang.com"),
+        version: String::from("1.2.5")
       }),
     ..Default::default()
   },

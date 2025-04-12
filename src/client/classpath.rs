@@ -33,7 +33,7 @@ impl ClassPathCollector {
       result.push(libraries_dir.join(&path).to_str().unwrap().to_string());
     }
 
-    result.push(config.client.path.join("versions").join(config.client.version).join("client.jar").to_str().unwrap().to_string());
+    result.push(config.client.path.join("versions").join(&config.client.version).join("client.jar").to_str().unwrap().to_string());
 
     result.join(JAVA_CLASSPATH_SEPARATOR)
   }

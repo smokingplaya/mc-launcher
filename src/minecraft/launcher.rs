@@ -11,16 +11,16 @@ use std::process::{Child, Command};
 
 
 #[derive(Debug, Clone)]
-pub struct MinecraftLauncher<'a>(Configuration<'a>);
+pub struct MinecraftLauncher(Configuration);
 
-impl<'a> From<Configuration<'a>> for MinecraftLauncher<'a> {
-  fn from(config: Configuration<'a>) -> Self {
+impl From<Configuration> for MinecraftLauncher {
+  fn from(config: Configuration) -> Self {
     Self(config)
   }
 }
 
-impl<'a> MinecraftLauncher<'a> {
-  pub fn new(config: Configuration<'a>) -> Self {
+impl MinecraftLauncher {
+  pub fn new(config: Configuration) -> Self {
     Self(config)
   }
 
